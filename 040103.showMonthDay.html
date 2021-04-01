@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<html lang="en">
+		
+		<head>
+		    <meta charset="UTF-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>用户指定月份天数输出</title>
+		    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+		</head>
+		
+		<body style="text-align: center; padding: 300px;">
+		    <div id="app" style="color:blue; 800px ;height: 50px;">
+				<a style="color: #6495ED;font-size:30px ;">请输入月份（默认1月份）：</a>
+				<input style="zoom:400px;" v-model="monthDay"><br><br><br>
+		        <a style="color: #6495ED;font-size:30px ;">现在查询的是{{monthDay}}月份天数。</a><br><br><br>
+		        <a style="color: #6495ED; font-size: 30px;">您输入的月份对应的天数为：
+		        {{dayInMonth}}。</a>
+		
+		    </div>
+		
+		    <script>
+		        let v = new Vue({
+		            el: '#app',
+		            data: {
+		                monthDay: '1',
+		            },
+		            computed: {
+		                dayInMonth() {
+		                    let month = parseInt(this.monthDay)
+		                    switch (month) {
+		                        case 1:
+		                            return 31;
+		                        case 2:
+		                            return 28;
+		                        case 3:
+		                            return 31;
+		                        case 4:
+		                            return 30;
+		                        case 5:
+		                            return 31;
+		                        case 6:
+		                            return 30;
+		                        case 7:
+		                            return 31;
+		                        case 8:
+		                            return 31;
+		                        case 9:
+		                            return 30;
+		                        case 10:
+		                            return 31;
+		                        case 11:
+		                            return 30;
+		                        case 12:
+		                            return 31;
+		                    }
+		                    return '您输入的月份不合法'
+		                }
+		            }
+		        })
+		    </script>
+		</body>
+		
+		</html>
+	</body>
+</html>
